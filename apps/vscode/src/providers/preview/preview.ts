@@ -498,6 +498,18 @@ class PreviewManager {
       }
     }
 
+    // add port if configured
+    const port = this.previewPortConfig();
+    if (port !== undefined) {
+      cmd.push("--port", String(port));
+    }
+
+    // add host if configured
+    const host = this.previewHostConfig();
+    if (host !== undefined) {
+      cmd.push("--host", host);
+    }
+
     // send terminal command
     await sendTerminalCommand(this.terminal_, this.previewEnv_, this.quartoContext_, cmd);
 
@@ -735,6 +747,14 @@ class PreviewManager {
 
   private previewRPackageDirConfig(): boolean {
     return this.quartoConfig().get("render.rPackageOutputDirectory", true);
+  }
+
+  private previewPortConfig(): number | undefined {
+    return this.quartoConfig().get<number>("preview.port");
+  }
+
+  private previewHostConfig(): string | undefined {
+    return this.quartoConfig().get<string>("preview.host");
   }
 
   private quartoConfig() {
