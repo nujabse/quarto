@@ -1151,7 +1151,7 @@
           "markdownDescription": "Reveal the preview panel after document render."
         },
         "quarto.preview.port": {
-          "order": 14,
+          "order": 15,
           "scope": "window",
           "type": "integer",
           "minimum": 1,
@@ -1159,13 +1159,13 @@
           "markdownDescription": "Port number to use for the preview server. If not specified, Quarto will automatically choose an available port."
         },
         "quarto.preview.host": {
-          "order": 14,
+          "order": 16,
           "scope": "window",
           "type": "string",
           "markdownDescription": "Hostname to bind the preview server to. If not specified, defaults to `127.0.0.1`."
         },
         "quarto.render.rPackageOutputDirectory": {
-          "order": 15,
+          "order": 17,
           "scope": "window",
           "type": "boolean",
           "default": true,
